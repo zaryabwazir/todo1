@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <ul>
+        {% for task in tasks %}
+            {% if not task.completed %}
+                <li>
+                    <input type="checkbox" {% if task.completed %}checked{% endif %} onclick="location.href='{% url 'toggle_task' task.id %}'">
+                    {{ task.title }}
+                    <a href="{% url 'delete_task' task.id %}">Delete</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    
+    <h2>Completed Tasks</h2>
+    <ul>
+        {% for task in tasks %}
+            {% if task.completed %}
+                <li>
+                    <input type="checkbox" {% if task.completed %}checked{% endif %} onclick="location.href='{% url 'toggle_task' task.id %}'">
+                    {{ task.title }}
+                    <a href="{% url 'delete_task' task.id %}">Delete</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_task' %}">Add Task</a>
+</body>
+</html>
