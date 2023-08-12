@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todo',
-        'USER': 'todo',
-        'PASSWORD': 'todo',
-        'HOST': 'localhost',  # Or your PostgreSQL host
-        'PORT': '5432',       # Default PostgreSQL port
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'tv8PaOcPFjllhU69bnbX',
+        'HOST': 'containers-us-west-75.railway.app',  # Or your PostgreSQL host
+        'PORT': '5723',       # Default PostgreSQL port
     }
 }
 
